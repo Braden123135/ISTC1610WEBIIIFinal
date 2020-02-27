@@ -1,0 +1,63 @@
+/*
+Begin template code from Header.css (edit HERE, paste THERE after save)
+*/
+
+body{
+    margin:0px;
+    padding:0px;
+}
+
+#header_div{
+    margin:0px;
+    padding:0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:99.6%;
+    height: 40px;
+    border: rgb(27, 27, 27) solid 4px; /* Dev line */
+}
+
+#header_search_div{
+    display:flex;
+    padding-right: 3%;
+    flex-direction: row;
+}
+
+#header_endmenu_div{
+}
+
+#header_logo_img{
+    height: 40px;
+}
+
+#header_search_img{
+    height: 40px;
+}
+
+#header_search_input{
+    height: 20px;
+    margin-top: 8px;
+    margin-left: 15px;
+    margin-right: 10px;
+    border: rgb(27, 27, 27) solid 3px;
+    background-color: rgb(27, 27, 27);
+    border-radius: 10px;
+    
+}
+
+#header_upload_img{
+    height:40px;
+}
+
+#header_me_img{
+    height:40px;
+}
+
+.imgs{ /* Dev line */
+    outline: red solid 5px;
+}
+
+/*
+End template code from Header.css (edit HERE, paste THERE after save)
+*/
