@@ -1,0 +1,28 @@
+html{
+    height:100%;
+}
+
+#body_page_div{
+    height: 95%;
+    outline: 1px brown solid;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#body_profilelist_div{
+    display: flex;
+    flex-direction: row;
+    height: 75%;
+}
+
+#body_profilelist_addnew_div{
+
+}
+
+.body_profilelist_profiles_divs{
+    outline:3px solid red;
+}
+.body_profilelist_profiles_imgs{
+    width:100%;
+}

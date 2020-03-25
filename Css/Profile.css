@@ -1,0 +1,36 @@
+#body_div{
+    display:flex;
+    flex-direction:row;
+}
+
+#body_profile_div{
+    display:flex;
+    flex-direction: column;
+    margin-left:10%;
+}
+
+#body_profilecover_div{
+    display:flex;
+    flex-direction: row;
+}
+
+#body_profilecontent_div{
+    display:flex;
+    flex-direction: row;
+}
+
+#body_profilecover_txt_div{
+    display:flex;
+    flex-direction:column;
+    margin-left:10px;
+}
+
+#body_profilecover_pfp_img{
+    border-radius:100%;
+    width:50%;
+}
+
+#body_profilecover_name_txt{
+    margin-top:auto;
+    font-size: 50pt;
+}
