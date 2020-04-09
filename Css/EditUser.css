@@ -1,0 +1,16 @@
+#body_page_div{
+display: flex;
+justify-content: center;
+}
+
+#body_page_editUser_div{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#body_page_editUser_img{
+    height: 500px;
+    width: 500px;
+    border-radius: 100%
+}

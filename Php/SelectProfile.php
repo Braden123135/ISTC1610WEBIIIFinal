@@ -1,7 +1,7 @@
 <?php
     require "header.php";
     if(!isset($_SESSION['login']) || $_SESSION['login'] == ""){
-        header("Location: ../php/login.php");
+        header("Location: ../php/home.php");
         exit;
     }else{
         require "../Includes/GetProfile.inc.php";
@@ -17,6 +17,7 @@
 <html>
     <head>
         <title>VC - Select Profile</title>
+        <link rel="stylesheet" type="text/css" href="../css/Forms.css">
         <link rel="stylesheet" type="text/css" href="../css/SelectProfile.css">
         <?php
             //require "header.php";
@@ -28,8 +29,9 @@
                 <?php
                 if(!$profiles==null){
                     foreach($profiles as &$profile){
-                        if($profile[2]==$userId);
-                        echo('<a href="profile.php?profileId='.$profile[0].'" class="body_profilelist_profiles_as""><div class="body_profilelist_profiles_divs"><div class="body_profilelist_profiles_img_divs"><img src="../rec/profiles/profiles/'.$profile[0].'/pfp/pfp.png" class="body_profilelist_profiles_imgs"></div><h1>'.$profile[2].'</h1></div></a>');
+                        if($profile[1]==$userId){
+                            echo('<a href="profile.php?profileId='.$profile[0].'" class="body_profilelist_profiles_as""><div class="body_profilelist_profiles_divs"><div class="body_profilelist_profiles_img_divs"><img src="../rec/profiles/profiles/'.$profile[0].'/pfp/pfp.png" class="body_profilelist_profiles_imgs"></div><h1>'.$profile[2].'</h1></div></a>');
+                        }
                     }
                 }
                 ?>
@@ -42,6 +44,9 @@
                     </div>
                 </a>
             </div>
+            <?php
+            echo('<a href="../php/User.php?userId='.$userId.'"><div class="form_divs"><button>View user page</button></div></a>');
+            ?>
         </div>
     </body>
 </html>

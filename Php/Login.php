@@ -8,6 +8,7 @@
 <head>
     <title>VC - Login</title>
     <link rel="stylesheet" type="text/css" href="../css/Home.css">
+    <link rel="stylesheet" type="text/css" href="../css/Forms.css">
 </head>
 
 <body>

@@ -19,7 +19,7 @@ if(!isset($_POST['createprofile'])){
             header("Location: ../php/Home.php?error=emptyfields&profileTagline=".$profileTagline);
             exit();
         }else{
-            if((!preg_match("/^[a-zA-Z0-9 ]*$/", $profileTagline) && (!!preg_match("/^[a-zA-Z0-9 ]*$/", $profileName)))){
+            if((!preg_match("/^[a-zA-Z0-9 ,.!]*$/", $profileTagline) && (!!preg_match("/^[a-zA-Z0-9 ]*$/", $profileName)))){
                 header("Location: ../php/Home.php?error=badfields");
                 exit();
             }else{

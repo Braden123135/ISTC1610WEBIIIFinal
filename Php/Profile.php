@@ -3,33 +3,12 @@
     $profileId = $_GET['profileId'];
     $id;
     if(empty($profileId)){
-        if (session_status() == PHP_SESSION_ACTIVE) {
-            require "../Includes/Dbh.inc.php";
-            $id = $_SESSION['userId'];
-            header("Location: selectProfile.php");
+        if(!isset($_SESSION['login']) || $_SESSION['login'] == ""){
+            header("Location: ../php/Home.php");
             exit();
-
-            //  Build the statement.
-            //  Find the defaultprofileUsers of a user whos uid matches ?
-            $sql = "SELECT defaultprofileUsers FROM users WHERE idUsers=?";
-            $stmt = mysqli_stmt_init($conn);
-            if(!mysqli_stmt_prepare($stmt, $sql)){
-                echo(mysqli_info($stmt));
-                //header("Location: ../php/home.php?error=fetchprofilesqlerror");
-                exit();
-            }
-            else{
-                //  Run the statement
-                //  Get the defaultprofileUsers of the currently logged in user
-                mysqli_stmt_bind_param($stmt, "s", $id);
-                mysqli_stmt_execute($stmt);
-                $result = $stmt->get_result();
-                $user = $result->fetch_assoc();
-                $profileId = $user['defaultprofileUsers'];
-                echo $profileId;
-            }
-        }else{
-            header("Location= Home.php?error=nosessionprofile");
+        } else {
+            header("Location: ../php/SelectProfile.php");
+            exit();
         }
     }
     // Fetch data for profile
@@ -39,6 +18,13 @@
     $profilePfpSrc = $profileDir."pfp/pfp.png";
     $profileName = $profile['nameProfiles'];
     $profileTagline = $profile['taglineProfiles'];
+    $profileOwner = $profile['iduserprofilesProfiles'];
+    $loggedIn = null;
+    if(!isset($_SESSION['login']) || $_SESSION['login'] == ""){
+        $loggedIn = false;
+    } else {
+        $loggedIn = $_SESSION['userId'];
+    }
 
 ?>
 <!DOCTYPE html>
@@ -51,8 +37,9 @@
         <div id="body_div">
             <div id="body_profile_div">
                 <div id="body_profilecover_div">
-                    <img id="body_profilecover_pfp_img" class="imgs" src=<?php echo'"'.$profilePfpSrc.'"'; ?>>
+                    <img id="body_profilecover_profilePfp_img" class="imgs" src=<?php echo'"'.$profilePfpSrc.'"'; ?>>
                     <div id="body_profilecover_txt_div">
+                        <?php if($loggedIn == $profileOwner){echo('<a href="../php/editProfile.php?profileId='.$profileId.'"> <button>Edit Profile</button></a>');} ?>
                         <h1 id="body_profilecover_name_txt" class="txt"><?php echo($profileName);?></h1>
                         <h2 id="body_profilecover_tagline_txt" class="txt"><?php echo($profileTagline)?></h2>
                     </div>

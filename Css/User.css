@@ -1,0 +1,32 @@
+#body_page_div{
+    display:flex;
+    flex-direction: column;
+}
+
+#body_page_top_div{
+    height: 100px;
+}
+
+#body_page_bottom_div{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#body_page_bottom_userPfp_img{
+    border-radius: 15%;
+    width: 20%;
+}
+
+#body_page_bottom_profiles_div{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    border: gray 5px solid;
+    border-radius: 10px;
+    background:rgb(102, 101, 101);
+}
+
+h3{
+    font-size:50pt;
+}

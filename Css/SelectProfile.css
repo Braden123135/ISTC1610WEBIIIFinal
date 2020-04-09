@@ -1,11 +1,8 @@
-html{
-    height:100%;
-}
-
 #body_page_div{
-    height: 95%;
+    height: 92%;
     outline: 1px brown solid;
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -14,6 +11,10 @@ html{
     display: flex;
     flex-direction: row;
     height: 75%;
+}
+
+.form_divs *{
+    width: 100%;
 }
 
 #body_profilelist_addnew_div{
